@@ -1,0 +1,2 @@
+M=100000: build 9773 ms, insert 2.64 ms, path check 1.80 ms
+M=100000: build 5025 ms (median of 3), insert 0.97 ms (median of 200), path check 0.97 ms

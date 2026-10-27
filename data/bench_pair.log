@@ -1,0 +1,10 @@
+pairs=100 overhead=45.9 ms, 95% CI 21.5 to 70.3 ms
+pairs=100 overhead=40.4 ms, 95% CI 15.8 to 64.9 ms
+proc p1: pairs=100 overhead=41.6 ms (sd 49.2)
+proc p2: pairs=100 overhead=47.4 ms (sd 50.1)
+proc p3: pairs=100 overhead=52.2 ms (sd 51.8)
+proc p4: pairs=100 overhead=46.9 ms (sd 45.0)
+proc p1: pairs=100 overhead=33.5 ms (sd 17.9)
+proc p2: pairs=100 overhead=37.1 ms (sd 25.5)
+proc p3: pairs=100 overhead=35.1 ms (sd 45.2)
+proc p4: pairs=100 overhead=31.6 ms (sd 40.6)

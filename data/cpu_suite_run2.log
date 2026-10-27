@@ -1,0 +1,10 @@
+== 03:06:54 session 2026-10-27T03:06:54Z: waiting for an idle machine on mains power (two readings <= 15%)
+== 03:09:16 check 1: load 9.4%
+== 03:09:38 check 2: load 8.5%
+== 03:09:38 1 Node sweep
+Add-Content: the monitor could not write one sample to data/power_2026-10-27T03-06-54Z.log (file in use); one 2 s sample lost
+== 03:14:27 2 paired benchmark
+== 03:21:53 3 cold first proofs
+== 03:22:57 4 tree cost
+== 03:23:35 5 Chrome
+== 03:27:28 done 2026-10-27T03:06:54Z

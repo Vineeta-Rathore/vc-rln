@@ -1,0 +1,37 @@
+{
+  "name": "vc-rln",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Anonymous posting with rate limits derived from verifiable credentials: RLN v2 circuit with an in-proof limit, issuer root registry, measurements and data",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vineeta-Rathore/vc-rln"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node scripts/test_circuit.js && hardhat run scripts/registry_test.js",
+    "verify": "node tools/verify_proofs.js && node tools/verify_transactions.js && node tools/rebuild_tree.js",
+    "build": "bash scripts/build.sh",
+    "bench": "bash scripts/bench.sh",
+    "gas:local": "hardhat run scripts/gas_local.js",
+    "analysis": "bash analysis/run_all.sh"
+  },
+  "dependencies": {
+    "circom_runtime": "0.1.28",
+    "circomlib": "2.0.5",
+    "circomlibjs": "0.1.7",
+    "did-resolver": "5.0.1",
+    "ethers": "6.17.0",
+    "ethr-did-resolver": "14.1.2",
+    "snarkjs": "0.7.5"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "5.0.0",
+    "dotenv": "16.6.1",
+    "hardhat": "2.28.6",
+    "puppeteer-core": "24.10.0"
+  }
+}

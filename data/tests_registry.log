@@ -1,0 +1,13 @@
+PASS  R1 superseded root accepted within W, refused after g by a short-grace verifier, refused after W  (true, false, true, false)
+PASS  R1b after g, every root published before the revocation is refused, though still inside W; the new root is accepted  (in W; false, false, true)
+PASS  R1c a later revocation does not revive a root refused after g  (in W; false)
+PASS  R1d a root published in the same block as a revocation but before it is refused after g; the revocation's root is accepted  (same block; false, true)
+PASS  R1e an old root republished without its events, and a root that does not match its leaves, are refused though the registry lists them  (listed; false, false; 2 mismatched)
+PASS  R1f malformed input to the root rule (empty position, no revocation list, a non-integer block, a non-boolean window) is refused  (false,false,false,false)
+PASS  R2 root evicted after 16 further publications, even inside W  (false, false)
+PASS  R3 unknown root and wrong slot refused, current root accepted at its slot  (false, false, true)
+PASS  R4 non-owner refused; after rotation the old key is refused and the new key publishes  (reverted: not the issuer's DID owner, reverted: not the issuer's DID owner, no revert)
+PASS  R4 revoking a leaf that does not exist is refused  (reverted: no such leaf)
+PASS  R5 a valid proof with x = 0 is refused by PostBoard  (valid proof; reverted: x)
+
+11/11 registry checks passed

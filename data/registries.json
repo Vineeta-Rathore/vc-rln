@@ -1,0 +1,23 @@
+[
+ {
+  "network": "opSepolia",
+  "registry": "0x5207ddc7a70a91763a0742fada9b039497c58f49",
+  "deployBlock": 50581778,
+  "issuer": "0x7ab54d25541fd1309457ee086a06dd0a42a88555",
+  "erc1056": "0xe56568fa9f8af46996a2fb0f4d8e04d4602ffd4f"
+ },
+ {
+  "network": "arbSepolia",
+  "registry": "0xb5ac7d1c146693ea757c05a91f0cc2bfbb3c9036",
+  "deployBlock": 322823664,
+  "issuer": "0x7ab54d25541fd1309457ee086a06dd0a42a88555",
+  "erc1056": "0xac2ed5927e9a3b40419b534d8a0e0bf63b273abe"
+ },
+ {
+  "network": "sepolia",
+  "registry": "0x2cc0a6a382b21ad3cbc2af2e9cd6eec9e0572138",
+  "deployBlock": 11993725,
+  "issuer": "0x7ab54d25541fd1309457ee086a06dd0a42a88555",
+  "erc1056": "0xaeb0d593749147485df2041c6b9033dbcbd58639"
+ }
+]

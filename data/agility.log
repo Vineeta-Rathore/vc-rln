@@ -1,0 +1,70 @@
+{
+ "monthly": {
+  "rlnV2PerCommunity": {
+   "additions": 148000.0,
+   "revocations": 128000.0,
+   "leafOps": 276000.0,
+   "gas": 334645000,
+   "ETH_at_sampled_base_fee": 0.018342838491415,
+   "ETH_at_10_gwei": 3.34645
+  },
+  "rlnV2Tier": {
+   "additions": 12000,
+   "revocations": 7000,
+   "leafOps": 19000,
+   "gas": 24018672,
+   "ETH_at_sampled_base_fee": 0.0013165313062541404,
+   "ETH_at_10_gwei": 0.24018671875
+  },
+  "ours": {
+   "additions": 7000,
+   "revocations": 2000,
+   "leafOps": 9000,
+   "gas": 12090156,
+   "ETH_at_sampled_base_fee": 0.0006626956429342187,
+   "ETH_at_10_gwei": 0.1209015625
+  },
+  "ratio": {
+   "rlnV2PerCommunity": 30.666666666666668,
+   "rlnV2Tier": 2.111111111111111
+  }
+ },
+ "sensitivityRange": {
+  "vsPerCommunity": [
+   1.0,
+   30.666666666666668
+  ],
+  "vsTier": [
+   1.0,
+   5.444444444444445
+  ],
+  "vsTierByCutoffs": {
+   "none": [
+    1.0,
+    1.0
+   ],
+   "shared": [
+    1.6666666666666667,
+    2.111111111111111
+   ],
+   "per-community": [
+    1.6666666666666667,
+    5.444444444444445
+   ]
+  },
+  "vsPerCommunityByCutoffs": {
+   "none": [
+    1.0,
+    26.22222222222222
+   ],
+   "shared": [
+    1.6666666666666667,
+    30.666666666666668
+   ],
+   "per-community": [
+    1.6666666666666667,
+    30.666666666666668
+   ]
+  }
+ }
+}

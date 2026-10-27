@@ -1,0 +1,38 @@
+rebuild: { events: 41, leaves: 457, rootMatches: true, ms: 30353.66699999571 }
+holder check: {
+  resolveMs: 2398.1800000071526,
+  totalMs: 2987.8418999910355,
+  signatureValid: true,
+  leafMatches: true,
+  rootIsCurrent: true,
+  tamperedRejected: true,
+  nonAssertionKeyRejected: true,
+  foreignDocumentRejected: true
+}
+policy anchor: {
+  revokedEarlier: 1,
+  txHash: '0x26dc1b22e97da0c575cf431f60237d48cfc54999e0458e3461b051dfce740eb2',
+  gasUsed: 34250,
+  ms: 23021.26510000229,
+  waitedS: 3835,
+  readMs: 7899.657000005245,
+  historyEvents: 15,
+  epochAfterAnchor: 2,
+  memberAccepts: true,
+  perMemberPolicyRefused: true
+}
+post: {
+  rootIsCurrent: true,
+  index: 0,
+  retrySameIndex: true,
+  proveMs: 1681.6933999955654,
+  verifierSetupMs: 28782.58100000024,
+  auditedEvents: 42,
+  auditMismatched: 0,
+  verifierTotalMs: 957.5544999837875,
+  accepted: true,
+  replayRejected: true,
+  rolledBackSkipsUsed: true,
+  loosePolicyRejected: true,
+  reuseRevealsSecret: true
+}

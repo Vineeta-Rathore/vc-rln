@@ -1,0 +1,302 @@
+{
+ "circuit": "vcrln_d20",
+ "date": "2026-10-27T11:11:51.039Z",
+ "passed": 49,
+ "total": 49,
+ "results": [
+  {
+   "name": "T1 honest post verifies",
+   "expected": "true",
+   "observed": "true",
+   "pass": true
+  },
+  {
+   "name": "T2 B message 0 accepted",
+   "expected": "proof",
+   "observed": "proof",
+   "pass": true
+  },
+  {
+   "name": "T2 B message 1 rejected (j >= limit)",
+   "expected": "witness fails in VCRLN line 106 (limit)",
+   "observed": "fails in VCRLN line 106",
+   "pass": true
+  },
+  {
+   "name": "T3 A message 9 accepted (limit 10)",
+   "expected": "proof",
+   "observed": "proof",
+   "pass": true
+  },
+  {
+   "name": "T3 A message 10 rejected",
+   "expected": "witness fails in VCRLN line 106 (limit)",
+   "observed": "fails in VCRLN line 106",
+   "pass": true
+  },
+  {
+   "name": "T4 minor rejected in 18+ community",
+   "expected": "witness fails in VCRLN line 95 (ageGate)",
+   "observed": "fails in VCRLN line 95",
+   "pass": true
+  },
+  {
+   "name": "T4 minor accepted in ungated community",
+   "expected": "proof",
+   "observed": "proof",
+   "pass": true
+  },
+  {
+   "name": "T5 same index, same epoch: equal nullifiers",
+   "expected": "equal",
+   "observed": "equal",
+   "pass": true
+  },
+  {
+   "name": "T5 secret recovered and matches the leaf's identity commitment",
+   "expected": "H(s) = C_id",
+   "observed": "match",
+   "pass": true
+  },
+  {
+   "name": "T6 nullifiers differ across index, epoch, community",
+   "expected": "all distinct",
+   "observed": "all distinct",
+   "pass": true
+  },
+  {
+   "name": "T7 changed x fails the proof",
+   "expected": "false",
+   "observed": "false",
+   "pass": true
+  },
+  {
+   "name": "T7 valid proof under a looser policy rejected",
+   "expected": "public input baseLimit",
+   "observed": "public input baseLimit",
+   "pass": true
+  },
+  {
+   "name": "T7 resent post dropped as replay, secret not revealed",
+   "expected": "replay",
+   "observed": "replay",
+   "pass": true
+  },
+  {
+   "name": "T7 second post with a used index reveals the secret",
+   "expected": "over limit",
+   "observed": "over limit",
+   "pass": true
+  },
+  {
+   "name": "T8 claiming verifiedHuman=1 with an unverified leaf fails",
+   "expected": "witness fails in VCRLN line 80 (root)",
+   "observed": "fails in VCRLN line 80",
+   "pass": true
+  },
+  {
+   "name": "T9 revoked member cannot prove against the new root",
+   "expected": "witness fails in VCRLN line 80 (root)",
+   "observed": "fails in VCRLN line 80",
+   "pass": true
+  },
+  {
+   "name": "T9 fresh proof after revocation against the superseded root verifies (window bounds it)",
+   "expected": "true",
+   "observed": "true",
+   "pass": true
+  },
+  {
+   "name": "T10 pseudonym stable across epochs in one community",
+   "expected": "equal",
+   "observed": "equal",
+   "pass": true
+  },
+  {
+   "name": "T10 pseudonym differs across communities; 0 in anonymous mode",
+   "expected": "distinct, 0",
+   "observed": "true, 0",
+   "pass": true
+  },
+  {
+   "name": "T11 two clients reading the anchor (one revoked, one valid value; events in any order) find the same form and accept it",
+   "expected": "same, accepted",
+   "observed": "same, true",
+   "pass": true
+  },
+  {
+   "name": "T11 two valid values, only an expired one, a deactivated DID or an event without a block time stop the client; validTo = t is valid",
+   "expected": "several; none; deactivated; bad time; valid",
+   "observed": "several anchored values; no anchored value; DID deactivated; bad event time; valid",
+   "pass": true
+  },
+  {
+   "name": "T11 a per-member policy that is not anchored is refused",
+   "expected": "not anchored",
+   "observed": "not anchored",
+   "pass": true
+  },
+  {
+   "name": "T11 an anchored form with an offset off the client's menu, or a limit coefficient above 255, is refused",
+   "expected": "offset not on menu; limit field out of range",
+   "observed": "offset not on menu; limit field out of range",
+   "pass": true
+  },
+  {
+   "name": "T11 a form read from one DID but naming another is refused",
+   "expected": "form names another DID",
+   "observed": "form names another DID",
+   "pass": true
+  },
+  {
+   "name": "T11 a credential with a schema other than the anchored one is refused",
+   "expected": "issuer or schema not the anchored one",
+   "observed": "issuer or schema not the anchored one",
+   "pass": true
+  },
+  {
+   "name": "T11 a post under the anchored policy verifies",
+   "expected": "true",
+   "observed": "true",
+   "pass": true
+  },
+  {
+   "name": "T12 counter survives a restart; a retried post keeps its index",
+   "expected": "0,1,2; retry 0",
+   "observed": "0,1,2; retry 0",
+   "pass": true
+  },
+  {
+   "name": "T12 two client instances on one state file never share an index",
+   "expected": "0,1,2",
+   "observed": "0,1,2",
+   "pass": true
+  },
+  {
+   "name": "T12 a client that finds the state locked by another client does not post",
+   "expected": "counter is locked by another client",
+   "observed": "counter is locked by another client",
+   "pass": true
+  },
+  {
+   "name": "T12 two devices split the indices, never share one and stop at the limit; a bad device number or a changed device count stops the client",
+   "expected": "10 distinct, stopped; refusals",
+   "observed": "10 distinct, stopped; bad device number; device count changed within the epoch",
+   "pass": true
+  },
+  {
+   "name": "T12 a state created in this epoch (reinstall, new device) posts only from the epoch after next",
+   "expected": "refused; refused; then 0",
+   "observed": "counter state is new or was lost recently: not posting in this epoch or the next; counter state is new or was lost recently: not posting in this epoch or the next; then 0",
+   "pass": true
+  },
+  {
+   "name": "T12 a state deleted after enrollment, even twice and re-initialised, stops posting for this epoch and the next; fresh indices after",
+   "expected": "missing; refused; 0",
+   "observed": "counter state missing: not posting in this epoch or the next; counter state is new or was lost recently: not posting in this epoch or the next; 0",
+   "pass": true
+  },
+  {
+   "name": "T12 a loss noticed with the clock one epoch behind still refuses the epoch whose index was used",
+   "expected": "missing; refused",
+   "observed": "counter state missing: not posting in this epoch or the next; counter state is new or was lost recently: not posting in this epoch or the next",
+   "pass": true
+  },
+  {
+   "name": "T12 truncated or malformed states (array slots, non-integer index, non-integer epoch, missing guard fields) count as lost",
+   "expected": "5 refused",
+   "observed": "5 refused",
+   "pass": true
+  },
+  {
+   "name": "T12 after a post in a later epoch (clock set forward) an earlier epoch is refused, so a used slot is never pruned and reused",
+   "expected": "0, 0; refused",
+   "observed": "0, 0; epoch earlier than one already used: not posting",
+   "pass": true
+  },
+  {
+   "name": "T12 one community written in decimal or hex has one slot; a community outside the field or a non-integer epoch is refused",
+   "expected": "0, 1; refused; refused",
+   "observed": "0, 1; community is not a field element; bad epoch",
+   "pass": true
+  },
+  {
+   "name": "T12 after a state is rolled back, the nullifier check skips indices already used",
+   "expected": "without check 1 (reuse); with check 2",
+   "observed": "without check 1; with check 2",
+   "pass": true
+  },
+  {
+   "name": "T12 the client computes its own nullifier for an index exactly as the circuit does",
+   "expected": "equal",
+   "observed": "equal",
+   "pass": true
+  },
+  {
+   "name": "T13 post for one community refused by another community's verifier",
+   "expected": "public input community",
+   "observed": "public input community",
+   "pass": true
+  },
+  {
+   "name": "T14 message index 2^16 fails the range check",
+   "expected": "witness fails in Num2Bits (range)",
+   "observed": "fails in Num2Bits line 38",
+   "pass": true
+  },
+  {
+   "name": "T14 message index p-1 (a wrapped -1) fails the range check",
+   "expected": "witness fails in Num2Bits (range)",
+   "observed": "fails in Num2Bits line 38",
+   "pass": true
+  },
+  {
+   "name": "T14 birth date 2^20 in an issued leaf fails the range check",
+   "expected": "witness fails in Num2Bits (range)",
+   "observed": "fails in Num2Bits line 38",
+   "pass": true
+  },
+  {
+   "name": "T14 age cutoff p-1 fails the range check",
+   "expected": "witness fails in Num2Bits (range)",
+   "observed": "fails in Num2Bits line 38",
+   "pass": true
+  },
+  {
+   "name": "T15 non-canonical nullifier (+p) rejected by verification",
+   "expected": "false",
+   "observed": "false",
+   "pass": true
+  },
+  {
+   "name": "T16 wrong signal count and incomplete policy are rejected",
+   "expected": "rejected, malformed",
+   "observed": "rejected, malformed",
+   "pass": true
+  },
+  {
+   "name": "T16 a forged share with an invalid proof does not block the genuine post",
+   "expected": "proof; then ok",
+   "observed": "proof; then ok",
+   "pass": true
+  },
+  {
+   "name": "T17 a member born in 1950 posts in an ungated and in an 18+ community",
+   "expected": "true",
+   "observed": "true",
+   "pass": true
+  },
+  {
+   "name": "T18 a form anchored within the lead time before epoch e governs e + 1, not e; a view that has not reached the policy time is refused",
+   "expected": "old form; new form; refused",
+   "observed": "old form; new form; the chain view has not passed the policy time",
+   "pass": true
+  },
+  {
+   "name": "T18 a post proved in epoch e under the later form is refused by e's verifier",
+   "expected": "public input verifiedBonus",
+   "observed": "public input verifiedBonus",
+   "pass": true
+  }
+ ]
+}

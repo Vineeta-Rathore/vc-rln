@@ -1,0 +1,2 @@
+net=sepolia chainId=11155111 balance=0.016313776398596907 ETH
+deploy:EthereumDIDRegistry reverted: 0x196c40ce737e26e3c196de9d9abd648db7982426331815e07a30ecc6412f5311

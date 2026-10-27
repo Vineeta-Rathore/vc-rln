@@ -1,0 +1,611 @@
+{
+ "assumptions": {
+  "members": 100000,
+  "communities": 4,
+  "newMembers": 5000,
+  "cutoffs": "shared",
+  "verifications": 2000,
+  "policyChanges": 1,
+  "affectedShare": 1.0,
+  "batch": 128
+ },
+ "formula": {
+  "rlnV2PerCommunity": "C*n + 2*C*(n_s+V) + 2*K*alpha*M",
+  "rlnV2Tier": "n + 2*(X+V)",
+  "ours": "n + 2*V",
+  "ratioTier": "1 + 2X/(n+2V)",
+  "X": "0 (no cutoff), n (shared), C*n (per community)"
+ },
+ "gasRules": "current mainnet rules (Hardhat, Osaka)",
+ "measured": {
+  "addLeaves128": 187360,
+  "revokeLeaves128": 118010,
+  "gasPerAddedLeaf": 1463.75,
+  "gasPerRevokedLeaf": 921.953125,
+  "gasPerReplacement": 2385.703125,
+  "ethBaseFeeMedianWei": 54812827.0,
+  "feeSamples": 70
+ },
+ "enrolment": {
+  "rlnV2PerCommunity": {
+   "additions": 400000,
+   "revocations": 0,
+   "leafOps": 400000,
+   "gas": 585500000,
+   "ETH_at_sampled_base_fee": 0.0320929102085,
+   "ETH_at_10_gwei": 5.855
+  },
+  "rlnV2Tier": {
+   "additions": 100000,
+   "revocations": 0,
+   "leafOps": 100000,
+   "gas": 146375000,
+   "ETH_at_sampled_base_fee": 0.008023227552125,
+   "ETH_at_10_gwei": 1.46375
+  },
+  "ours": {
+   "additions": 100000,
+   "revocations": 0,
+   "leafOps": 100000,
+   "gas": 146375000,
+   "ETH_at_sampled_base_fee": 0.008023227552125,
+   "ETH_at_10_gwei": 1.46375
+  }
+ },
+ "monthly": {
+  "rlnV2PerCommunity": {
+   "additions": 148000.0,
+   "revocations": 128000.0,
+   "leafOps": 276000.0,
+   "gas": 334645000,
+   "ETH_at_sampled_base_fee": 0.018342838491415,
+   "ETH_at_10_gwei": 3.34645
+  },
+  "rlnV2Tier": {
+   "additions": 12000,
+   "revocations": 7000,
+   "leafOps": 19000,
+   "gas": 24018672,
+   "ETH_at_sampled_base_fee": 0.0013165313062541404,
+   "ETH_at_10_gwei": 0.24018671875
+  },
+  "ours": {
+   "additions": 7000,
+   "revocations": 2000,
+   "leafOps": 9000,
+   "gas": 12090156,
+   "ETH_at_sampled_base_fee": 0.0006626956429342187,
+   "ETH_at_10_gwei": 0.1209015625
+  },
+  "ratio": {
+   "rlnV2PerCommunity": 30.666666666666668,
+   "rlnV2Tier": 2.111111111111111
+  }
+ },
+ "sensitivity": [
+  {
+   "cutoffs": "none",
+   "communities": 1,
+   "policyChanges": 0,
+   "affectedShare": 1.0,
+   "verifications": 2000,
+   "vsPerCommunity": 1.0,
+   "vsTier": 1.0
+  },
+  {
+   "cutoffs": "none",
+   "communities": 1,
+   "policyChanges": 0,
+   "affectedShare": 1.0,
+   "verifications": 5000,
+   "vsPerCommunity": 1.0,
+   "vsTier": 1.0
+  },
+  {
+   "cutoffs": "none",
+   "communities": 1,
+   "policyChanges": 1,
+   "affectedShare": 0.25,
+   "verifications": 2000,
+   "vsPerCommunity": 6.555555555555555,
+   "vsTier": 1.0
+  },
+  {
+   "cutoffs": "none",
+   "communities": 1,
+   "policyChanges": 1,
+   "affectedShare": 0.25,
+   "verifications": 5000,
+   "vsPerCommunity": 4.333333333333333,
+   "vsTier": 1.0
+  },
+  {
+   "cutoffs": "none",
+   "communities": 1,
+   "policyChanges": 1,
+   "affectedShare": 1.0,
+   "verifications": 2000,
+   "vsPerCommunity": 23.22222222222222,
+   "vsTier": 1.0
+  },
+  {
+   "cutoffs": "none",
+   "communities": 1,
+   "policyChanges": 1,
+   "affectedShare": 1.0,
+   "verifications": 5000,
+   "vsPerCommunity": 14.333333333333334,
+   "vsTier": 1.0
+  },
+  {
+   "cutoffs": "none",
+   "communities": 2,
+   "policyChanges": 0,
+   "affectedShare": 1.0,
+   "verifications": 2000,
+   "vsPerCommunity": 2.0,
+   "vsTier": 1.0
+  },
+  {
+   "cutoffs": "none",
+   "communities": 2,
+   "policyChanges": 0,
+   "affectedShare": 1.0,
+   "verifications": 5000,
+   "vsPerCommunity": 2.0,
+   "vsTier": 1.0
+  },
+  {
+   "cutoffs": "none",
+   "communities": 2,
+   "policyChanges": 1,
+   "affectedShare": 0.25,
+   "verifications": 2000,
+   "vsPerCommunity": 7.555555555555555,
+   "vsTier": 1.0
+  },
+  {
+   "cutoffs": "none",
+   "communities": 2,
+   "policyChanges": 1,
+   "affectedShare": 0.25,
+   "verifications": 5000,
+   "vsPerCommunity": 5.333333333333333,
+   "vsTier": 1.0
+  },
+  {
+   "cutoffs": "none",
+   "communities": 2,
+   "policyChanges": 1,
+   "affectedShare": 1.0,
+   "verifications": 2000,
+   "vsPerCommunity": 24.22222222222222,
+   "vsTier": 1.0
+  },
+  {
+   "cutoffs": "none",
+   "communities": 2,
+   "policyChanges": 1,
+   "affectedShare": 1.0,
+   "verifications": 5000,
+   "vsPerCommunity": 15.333333333333334,
+   "vsTier": 1.0
+  },
+  {
+   "cutoffs": "none",
+   "communities": 4,
+   "policyChanges": 0,
+   "affectedShare": 1.0,
+   "verifications": 2000,
+   "vsPerCommunity": 4.0,
+   "vsTier": 1.0
+  },
+  {
+   "cutoffs": "none",
+   "communities": 4,
+   "policyChanges": 0,
+   "affectedShare": 1.0,
+   "verifications": 5000,
+   "vsPerCommunity": 4.0,
+   "vsTier": 1.0
+  },
+  {
+   "cutoffs": "none",
+   "communities": 4,
+   "policyChanges": 1,
+   "affectedShare": 0.25,
+   "verifications": 2000,
+   "vsPerCommunity": 9.555555555555555,
+   "vsTier": 1.0
+  },
+  {
+   "cutoffs": "none",
+   "communities": 4,
+   "policyChanges": 1,
+   "affectedShare": 0.25,
+   "verifications": 5000,
+   "vsPerCommunity": 7.333333333333333,
+   "vsTier": 1.0
+  },
+  {
+   "cutoffs": "none",
+   "communities": 4,
+   "policyChanges": 1,
+   "affectedShare": 1.0,
+   "verifications": 2000,
+   "vsPerCommunity": 26.22222222222222,
+   "vsTier": 1.0
+  },
+  {
+   "cutoffs": "none",
+   "communities": 4,
+   "policyChanges": 1,
+   "affectedShare": 1.0,
+   "verifications": 5000,
+   "vsPerCommunity": 17.333333333333332,
+   "vsTier": 1.0
+  },
+  {
+   "cutoffs": "shared",
+   "communities": 1,
+   "policyChanges": 0,
+   "affectedShare": 1.0,
+   "verifications": 2000,
+   "vsPerCommunity": 2.111111111111111,
+   "vsTier": 2.111111111111111
+  },
+  {
+   "cutoffs": "shared",
+   "communities": 1,
+   "policyChanges": 0,
+   "affectedShare": 1.0,
+   "verifications": 5000,
+   "vsPerCommunity": 1.6666666666666667,
+   "vsTier": 1.6666666666666667
+  },
+  {
+   "cutoffs": "shared",
+   "communities": 1,
+   "policyChanges": 1,
+   "affectedShare": 0.25,
+   "verifications": 2000,
+   "vsPerCommunity": 7.666666666666667,
+   "vsTier": 2.111111111111111
+  },
+  {
+   "cutoffs": "shared",
+   "communities": 1,
+   "policyChanges": 1,
+   "affectedShare": 0.25,
+   "verifications": 5000,
+   "vsPerCommunity": 5.0,
+   "vsTier": 1.6666666666666667
+  },
+  {
+   "cutoffs": "shared",
+   "communities": 1,
+   "policyChanges": 1,
+   "affectedShare": 1.0,
+   "verifications": 2000,
+   "vsPerCommunity": 24.333333333333332,
+   "vsTier": 2.111111111111111
+  },
+  {
+   "cutoffs": "shared",
+   "communities": 1,
+   "policyChanges": 1,
+   "affectedShare": 1.0,
+   "verifications": 5000,
+   "vsPerCommunity": 15.0,
+   "vsTier": 1.6666666666666667
+  },
+  {
+   "cutoffs": "shared",
+   "communities": 2,
+   "policyChanges": 0,
+   "affectedShare": 1.0,
+   "verifications": 2000,
+   "vsPerCommunity": 4.222222222222222,
+   "vsTier": 2.111111111111111
+  },
+  {
+   "cutoffs": "shared",
+   "communities": 2,
+   "policyChanges": 0,
+   "affectedShare": 1.0,
+   "verifications": 5000,
+   "vsPerCommunity": 3.3333333333333335,
+   "vsTier": 1.6666666666666667
+  },
+  {
+   "cutoffs": "shared",
+   "communities": 2,
+   "policyChanges": 1,
+   "affectedShare": 0.25,
+   "verifications": 2000,
+   "vsPerCommunity": 9.777777777777779,
+   "vsTier": 2.111111111111111
+  },
+  {
+   "cutoffs": "shared",
+   "communities": 2,
+   "policyChanges": 1,
+   "affectedShare": 0.25,
+   "verifications": 5000,
+   "vsPerCommunity": 6.666666666666667,
+   "vsTier": 1.6666666666666667
+  },
+  {
+   "cutoffs": "shared",
+   "communities": 2,
+   "policyChanges": 1,
+   "affectedShare": 1.0,
+   "verifications": 2000,
+   "vsPerCommunity": 26.444444444444443,
+   "vsTier": 2.111111111111111
+  },
+  {
+   "cutoffs": "shared",
+   "communities": 2,
+   "policyChanges": 1,
+   "affectedShare": 1.0,
+   "verifications": 5000,
+   "vsPerCommunity": 16.666666666666668,
+   "vsTier": 1.6666666666666667
+  },
+  {
+   "cutoffs": "shared",
+   "communities": 4,
+   "policyChanges": 0,
+   "affectedShare": 1.0,
+   "verifications": 2000,
+   "vsPerCommunity": 8.444444444444445,
+   "vsTier": 2.111111111111111
+  },
+  {
+   "cutoffs": "shared",
+   "communities": 4,
+   "policyChanges": 0,
+   "affectedShare": 1.0,
+   "verifications": 5000,
+   "vsPerCommunity": 6.666666666666667,
+   "vsTier": 1.6666666666666667
+  },
+  {
+   "cutoffs": "shared",
+   "communities": 4,
+   "policyChanges": 1,
+   "affectedShare": 0.25,
+   "verifications": 2000,
+   "vsPerCommunity": 14.0,
+   "vsTier": 2.111111111111111
+  },
+  {
+   "cutoffs": "shared",
+   "communities": 4,
+   "policyChanges": 1,
+   "affectedShare": 0.25,
+   "verifications": 5000,
+   "vsPerCommunity": 10.0,
+   "vsTier": 1.6666666666666667
+  },
+  {
+   "cutoffs": "shared",
+   "communities": 4,
+   "policyChanges": 1,
+   "affectedShare": 1.0,
+   "verifications": 2000,
+   "vsPerCommunity": 30.666666666666668,
+   "vsTier": 2.111111111111111
+  },
+  {
+   "cutoffs": "shared",
+   "communities": 4,
+   "policyChanges": 1,
+   "affectedShare": 1.0,
+   "verifications": 5000,
+   "vsPerCommunity": 20.0,
+   "vsTier": 1.6666666666666667
+  },
+  {
+   "cutoffs": "per-community",
+   "communities": 1,
+   "policyChanges": 0,
+   "affectedShare": 1.0,
+   "verifications": 2000,
+   "vsPerCommunity": 2.111111111111111,
+   "vsTier": 2.111111111111111
+  },
+  {
+   "cutoffs": "per-community",
+   "communities": 1,
+   "policyChanges": 0,
+   "affectedShare": 1.0,
+   "verifications": 5000,
+   "vsPerCommunity": 1.6666666666666667,
+   "vsTier": 1.6666666666666667
+  },
+  {
+   "cutoffs": "per-community",
+   "communities": 1,
+   "policyChanges": 1,
+   "affectedShare": 0.25,
+   "verifications": 2000,
+   "vsPerCommunity": 7.666666666666667,
+   "vsTier": 2.111111111111111
+  },
+  {
+   "cutoffs": "per-community",
+   "communities": 1,
+   "policyChanges": 1,
+   "affectedShare": 0.25,
+   "verifications": 5000,
+   "vsPerCommunity": 5.0,
+   "vsTier": 1.6666666666666667
+  },
+  {
+   "cutoffs": "per-community",
+   "communities": 1,
+   "policyChanges": 1,
+   "affectedShare": 1.0,
+   "verifications": 2000,
+   "vsPerCommunity": 24.333333333333332,
+   "vsTier": 2.111111111111111
+  },
+  {
+   "cutoffs": "per-community",
+   "communities": 1,
+   "policyChanges": 1,
+   "affectedShare": 1.0,
+   "verifications": 5000,
+   "vsPerCommunity": 15.0,
+   "vsTier": 1.6666666666666667
+  },
+  {
+   "cutoffs": "per-community",
+   "communities": 2,
+   "policyChanges": 0,
+   "affectedShare": 1.0,
+   "verifications": 2000,
+   "vsPerCommunity": 4.222222222222222,
+   "vsTier": 3.2222222222222223
+  },
+  {
+   "cutoffs": "per-community",
+   "communities": 2,
+   "policyChanges": 0,
+   "affectedShare": 1.0,
+   "verifications": 5000,
+   "vsPerCommunity": 3.3333333333333335,
+   "vsTier": 2.3333333333333335
+  },
+  {
+   "cutoffs": "per-community",
+   "communities": 2,
+   "policyChanges": 1,
+   "affectedShare": 0.25,
+   "verifications": 2000,
+   "vsPerCommunity": 9.777777777777779,
+   "vsTier": 3.2222222222222223
+  },
+  {
+   "cutoffs": "per-community",
+   "communities": 2,
+   "policyChanges": 1,
+   "affectedShare": 0.25,
+   "verifications": 5000,
+   "vsPerCommunity": 6.666666666666667,
+   "vsTier": 2.3333333333333335
+  },
+  {
+   "cutoffs": "per-community",
+   "communities": 2,
+   "policyChanges": 1,
+   "affectedShare": 1.0,
+   "verifications": 2000,
+   "vsPerCommunity": 26.444444444444443,
+   "vsTier": 3.2222222222222223
+  },
+  {
+   "cutoffs": "per-community",
+   "communities": 2,
+   "policyChanges": 1,
+   "affectedShare": 1.0,
+   "verifications": 5000,
+   "vsPerCommunity": 16.666666666666668,
+   "vsTier": 2.3333333333333335
+  },
+  {
+   "cutoffs": "per-community",
+   "communities": 4,
+   "policyChanges": 0,
+   "affectedShare": 1.0,
+   "verifications": 2000,
+   "vsPerCommunity": 8.444444444444445,
+   "vsTier": 5.444444444444445
+  },
+  {
+   "cutoffs": "per-community",
+   "communities": 4,
+   "policyChanges": 0,
+   "affectedShare": 1.0,
+   "verifications": 5000,
+   "vsPerCommunity": 6.666666666666667,
+   "vsTier": 3.6666666666666665
+  },
+  {
+   "cutoffs": "per-community",
+   "communities": 4,
+   "policyChanges": 1,
+   "affectedShare": 0.25,
+   "verifications": 2000,
+   "vsPerCommunity": 14.0,
+   "vsTier": 5.444444444444445
+  },
+  {
+   "cutoffs": "per-community",
+   "communities": 4,
+   "policyChanges": 1,
+   "affectedShare": 0.25,
+   "verifications": 5000,
+   "vsPerCommunity": 10.0,
+   "vsTier": 3.6666666666666665
+  },
+  {
+   "cutoffs": "per-community",
+   "communities": 4,
+   "policyChanges": 1,
+   "affectedShare": 1.0,
+   "verifications": 2000,
+   "vsPerCommunity": 30.666666666666668,
+   "vsTier": 5.444444444444445
+  },
+  {
+   "cutoffs": "per-community",
+   "communities": 4,
+   "policyChanges": 1,
+   "affectedShare": 1.0,
+   "verifications": 5000,
+   "vsPerCommunity": 20.0,
+   "vsTier": 3.6666666666666665
+  }
+ ],
+ "sensitivityRange": {
+  "vsPerCommunity": [
+   1.0,
+   30.666666666666668
+  ],
+  "vsTier": [
+   1.0,
+   5.444444444444445
+  ],
+  "vsTierByCutoffs": {
+   "none": [
+    1.0,
+    1.0
+   ],
+   "shared": [
+    1.6666666666666667,
+    2.111111111111111
+   ],
+   "per-community": [
+    1.6666666666666667,
+    5.444444444444445
+   ]
+  },
+  "vsPerCommunityByCutoffs": {
+   "none": [
+    1.0,
+    26.22222222222222
+   ],
+   "shared": [
+    1.6666666666666667,
+    30.666666666666668
+   ],
+   "per-community": [
+    1.6666666666666667,
+    30.666666666666668
+   ]
+  }
+ }
+}

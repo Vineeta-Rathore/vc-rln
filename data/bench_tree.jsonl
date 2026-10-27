@@ -1,0 +1,3 @@
+{"session":"smoke3","leaves":2000,"buildMs":361.8731999993324,"insertMs":2.611399993300438,"verifyPathMs":2.932014000043273,"eventBytesPerLeaf":32,"ts":"2026-10-26T13:43:11.550Z"}
+{"session":"2026-10-26T21:45:05Z","leaves":100000,"buildMs":9773.359799996018,"insertMs":2.6418000012636185,"verifyPathMs":1.796697999984026,"eventBytesPerLeaf":32,"ts":"2026-10-26T22:03:57.365Z"}
+{"session":"2026-10-27T03:06:54Z","leaves":100000,"builds":3,"buildMs":5024.880899995565,"buildMinMs":5015.416100010276,"buildMaxMs":5034.058399990201,"inserts":200,"insertMs":0.9685000032186508,"insertMaxMs":2.029200002551079,"verifyPathMs":0.9730844999849796,"eventBytesPerLeaf":32,"ts":"2026-10-27T03:23:14.331Z"}

@@ -1,0 +1,75 @@
+{
+ "network": "hardhat",
+ "hardfork": "osaka",
+ "date": "2026-10-27T11:12:32.319Z",
+ "passed": 11,
+ "total": 11,
+ "results": [
+  {
+   "name": "R1 superseded root accepted within W, refused after g by a short-grace verifier, refused after W",
+   "expected": "true, false, true, false",
+   "observed": "true, false, true, false",
+   "pass": true
+  },
+  {
+   "name": "R1b after g, every root published before the revocation is refused, though still inside W; the new root is accepted",
+   "expected": "in W; false, false, true",
+   "observed": "in W; false, false, true",
+   "pass": true
+  },
+  {
+   "name": "R1c a later revocation does not revive a root refused after g",
+   "expected": "in W; false",
+   "observed": "in W; false",
+   "pass": true
+  },
+  {
+   "name": "R1d a root published in the same block as a revocation but before it is refused after g; the revocation's root is accepted",
+   "expected": "same block; false, true",
+   "observed": "same block; false, true",
+   "pass": true
+  },
+  {
+   "name": "R1e an old root republished without its events, and a root that does not match its leaves, are refused though the registry lists them",
+   "expected": "listed; false, false; 2 mismatched",
+   "observed": "listed; false, false; 2 mismatched",
+   "pass": true
+  },
+  {
+   "name": "R1f malformed input to the root rule (empty position, no revocation list, a non-integer block, a non-boolean window) is refused",
+   "expected": "false x4",
+   "observed": "false,false,false,false",
+   "pass": true
+  },
+  {
+   "name": "R2 root evicted after 16 further publications, even inside W",
+   "expected": "false, false",
+   "observed": "false, false",
+   "pass": true
+  },
+  {
+   "name": "R3 unknown root and wrong slot refused, current root accepted at its slot",
+   "expected": "false, false, true",
+   "observed": "false, false, true",
+   "pass": true
+  },
+  {
+   "name": "R4 non-owner refused; after rotation the old key is refused and the new key publishes",
+   "expected": "refused, refused, published",
+   "observed": "reverted: not the issuer's DID owner, reverted: not the issuer's DID owner, no revert",
+   "pass": true
+  },
+  {
+   "name": "R4 revoking a leaf that does not exist is refused",
+   "expected": "reverted: no such leaf",
+   "observed": "reverted: no such leaf",
+   "pass": true
+  },
+  {
+   "name": "R5 a valid proof with x = 0 is refused by PostBoard",
+   "expected": "valid proof; reverted: x",
+   "observed": "valid proof; reverted: x",
+   "pass": true
+  }
+ ]
+}

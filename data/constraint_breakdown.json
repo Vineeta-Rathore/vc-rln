@@ -1,0 +1,21 @@
+{
+ "depth": 20,
+ "note": "non-linear constraints with circom --O2; variants in build/variants (generated from circuits/vcrln.circom by scripts/constraint_breakdown.js)",
+ "vcrln_full": 6536,
+ "without_pseudonym": 6295,
+ "without_pseudonym_and_in_circuit_external_nullifier": 6055,
+ "rln_v2_reference": 5820,
+ "cost": {
+  "pseudonym": 241,
+  "in_circuit_external_nullifier": 240,
+  "credential_leaf_and_policy": 235,
+  "merkle_saving_vs_rln_v2": -20,
+  "credential_leaf_and_policy_gross": 255,
+  "platform_wide_cap": 523
+ },
+ "merkle_per_level": {
+  "ours": 242,
+  "rln_v2": 243,
+  "note": "rln.circom compiled with circom --O2 at depths 10 and 20: 3390 and 5820 non-linear constraints"
+ }
+}

@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite the paper and this repository."
+title: "vc-rln: rate limits derived from verifiable credentials"
+version: 1.0.0
+date-released: 2026-10-27
+license:
+  - MIT
+  - CC-BY-4.0
+repository-code: "https://github.com/Vineeta-Rathore/vc-rln"
+authors:
+  - family-names: Rathore
+    given-names: Vineeta
+    affiliation: "Medicaps University, Indore, India"
+  - family-names: Rawat
+    given-names: Manoj Kumar
+    affiliation: "Medicaps University, Indore, India"
+keywords:
+  - verifiable credentials
+  - decentralized identifiers
+  - zero-knowledge proofs
+  - rate-limiting nullifiers
+  - anonymous posting
+  - Ethereum rollups
+references:
+  - type: conference-paper
+    title: "Anonymous Social Media Posting with Rate Limits Derived from Verifiable Credentials"
+    authors:
+      - family-names: Rathore
+        given-names: Vineeta
+      - family-names: Rawat
+        given-names: Manoj Kumar
+    notes: "Submitted to the 3rd International Conference on Computer, Communication and Control (IC4'27)."
+    year: 2026

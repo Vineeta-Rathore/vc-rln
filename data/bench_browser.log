@@ -1,0 +1,17 @@
+vcrln_d20 [forward] browser prove 586 +- 72 ms (p95 655), verified=true, threads=12
+rln2_d20 [forward] browser prove 595 +- 36 ms (p95 646), verified=true, threads=12
+rln2_d20 [reverse] browser prove 641 +- 63 ms (p95 747), verified=true, threads=12
+vcrln_d20 [reverse] browser prove 695 +- 40 ms (p95 778), verified=true, threads=12
+vcrln_d20 [forward] browser prove 838 +- 50 ms (p95 917), verified=true, threads=12
+rln2_d20 [forward] browser prove 727 +- 42 ms (p95 788), verified=true, threads=12
+rln2_d20 [reverse] browser prove 717 +- 52 ms (p95 828), verified=true, threads=12
+vcrln_d20 [reverse] browser prove 825 +- 42 ms (p95 890), verified=true, threads=12
+browser paired: 40 pairs, vcrln_d20 - rln2_d20 = 76.0 ms
+vcrln_d20 [forward] browser prove 677 +- 68 ms (p95 752), verified=true, threads=12
+rln2_d20 [forward] browser prove 607 +- 51 ms (p95 681), verified=true, threads=12
+rln2_d20 [reverse] browser prove 604 +- 43 ms (p95 644), verified=true, threads=12
+vcrln_d20 [reverse] browser prove 696 +- 41 ms (p95 766), verified=true, threads=12
+browser paired, page 0: 15 pairs, vcrln_d20 - rln2_d20 = 62.4 ms
+browser paired, page 1: 15 pairs, vcrln_d20 - rln2_d20 = 53.3 ms
+browser paired, page 2: 15 pairs, vcrln_d20 - rln2_d20 = 77.7 ms
+browser paired, page 3: 15 pairs, vcrln_d20 - rln2_d20 = 51.7 ms

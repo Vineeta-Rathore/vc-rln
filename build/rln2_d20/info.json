@@ -1,0 +1,10 @@
+{
+ "name": "rln2_d20",
+ "constraints": 5820,
+ "wires": 5844,
+ "privateInputs": 43,
+ "publicInputs": 2,
+ "outputs": 3,
+ "zkeyBytes": 3405265,
+ "wasmBytes": 2421550
+}

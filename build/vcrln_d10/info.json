@@ -1,0 +1,10 @@
+{
+ "name": "vcrln_d10",
+ "constraints": 4116,
+ "wires": 4132,
+ "privateInputs": 26,
+ "publicInputs": 11,
+ "outputs": 3,
+ "zkeyBytes": 2875817,
+ "wasmBytes": 3289285
+}

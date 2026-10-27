@@ -1,0 +1,9 @@
+operation,local (osaka),Sepolia (Glamsterdam),OP Sepolia,Arbitrum Sepolia
+first publication (1 leaf),99293,357653,99293,99293
+ring filling (1 leaf),87523,272263,87523,87523
+publish 1 leaf,53311,76423,53323,53323
+publish 16 leaves,64898,88022,64874,64910
+publish 128 leaves,187360,285592,187330,151443
+revoke 1 leaf,52441,75541.0,52441.0,52441.0
+per-root design: publish 1 leaf,69819,173839,69819,69819
+on-chain post (baseline),342023.0,424823,342003,342015

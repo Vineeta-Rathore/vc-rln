@@ -1,0 +1,49 @@
+net=sepolia chainId=11155111 balance=0.016313545982096907 ETH
+sepolia deploy:EthereumDIDRegistry gas=7637569 incl=6893ms
+sepolia deploy:IssuerRootRegistry gas=4668279 incl=11519ms
+sepolia deploy:IssuerRootRegistryMap gas=3677114 incl=12594ms
+sepolia addLeaves(1) gas=357653 incl=11662ms
+sepolia addLeaves(1) gas=272251 incl=10903ms
+sepolia addLeaves(1) gas=272263 incl=14057ms
+sepolia addLeaves(1) gas=272251 incl=8904ms
+sepolia addLeaves(1) gas=272263 incl=11621ms
+sepolia addLeaves(1) gas=272263 incl=12286ms
+sepolia addLeaves(1) gas=272251 incl=11526ms
+sepolia addLeaves(1) gas=272251 incl=12556ms
+sepolia addLeaves(1) gas=272263 incl=11053ms
+sepolia addLeaves(1) gas=272263 incl=11265ms
+sepolia addLeaves(1) gas=272251 incl=11363ms
+sepolia addLeaves(1) gas=272263 incl=11787ms
+sepolia addLeaves(1) gas=272263 incl=11432ms
+sepolia addLeaves(1) gas=272263 incl=13247ms
+sepolia addLeaves(1) gas=272251 incl=11205ms
+sepolia addLeaves(1) gas=272263 incl=23142ms
+sepolia addLeaves(1) gas=76411 incl=10953ms
+sepolia addLeaves(1) gas=76423 incl=11876ms
+sepolia addLeaves(1) gas=76423 incl=11445ms
+sepolia addLeaves(16) gas=88010 incl=12257ms
+sepolia addLeaves(16) gas=88022 incl=10858ms
+sepolia addLeaves(16) gas=88034 incl=11977ms
+sepolia addLeaves(128) gas=285592 incl=11529ms
+sepolia addLeaves(128) gas=285592 incl=11768ms
+sepolia addLeaves(128) gas=285592 incl=10908ms
+sepolia revokeLeaves(1) gas=75541 incl=11359ms visible=11360ms
+sepolia revokeLeaves(1) gas=75541 incl=12350ms visible=12350ms
+sepolia revokeLeaves(1) gas=75541 incl=11534ms visible=11840ms
+sepolia revokeLeaves(1) gas=75541 incl=10859ms visible=10813ms
+sepolia revokeLeaves(1) gas=75541 incl=11460ms visible=11459ms
+sepolia revokeLeaves(1) gas=75541 incl=12543ms visible=12353ms
+sepolia revokeLeaves(1) gas=75541 incl=11212ms visible=11211ms
+sepolia revokeLeaves(1) gas=75541 incl=11322ms visible=11311ms
+sepolia revokeLeaves(1) gas=75541 incl=11712ms visible=11739ms
+sepolia revokeLeaves(1) gas=75541 incl=11555ms visible=11555ms
+sepolia map.addLeaves(1) gas=357263 incl=12715ms
+sepolia map.addLeaves(1) gas=173827 incl=10645ms
+sepolia map.addLeaves(1) gas=173839 incl=11733ms
+sepolia map.addLeaves(1) gas=173839 incl=11626ms
+sepolia deploy:PostVerifier gas=4220164 incl=12967ms
+sepolia deploy:PostBoard gas=3029590 incl=10030ms
+sepolia PostBoard.post(1) gas=424835 incl=11276ms
+sepolia PostBoard.post(1) gas=424823 incl=8657ms
+sepolia PostBoard.post(1) gas=424823 incl=10341ms
+done sepolia

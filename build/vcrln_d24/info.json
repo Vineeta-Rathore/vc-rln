@@ -1,0 +1,10 @@
+{
+ "name": "vcrln_d24",
+ "constraints": 7504,
+ "wires": 7534,
+ "privateInputs": 54,
+ "publicInputs": 11,
+ "outputs": 3,
+ "zkeyBytes": 4559513,
+ "wasmBytes": 3419914
+}

@@ -1,0 +1,16 @@
+{
+ "jsonldSafeMode": "expands",
+ "jsonldSafeModeWithoutUndefinedTerms": "fails: invalid property",
+ "keyInAssertionMethod": true,
+ "digitalBazaarVerified": true,
+ "tamperedRejected": true,
+ "versions": {
+  "jsonld": "9.0.0",
+  "@digitalbazaar/vc": "7.3.0",
+  "@digitalbazaar/data-integrity": "2.5.0",
+  "@digitalbazaar/eddsa-jcs-2022-cryptosuite": "1.0.0"
+ },
+ "credential": "credential.json",
+ "date": "2026-10-27T10:45:08.117Z",
+ "script": "vc_check/independent_vc_check.mjs"
+}

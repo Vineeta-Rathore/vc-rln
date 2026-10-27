@@ -1,0 +1,10 @@
+{
+ "_note": "Benchmark sessions the paper cites: 2026-10-27T03:06:54Z, the run_cpu_suite.sh session of 27 October 2026, 03:06-03:27 UTC, which started on an idle machine (load 9.4% and 8.5%) and stayed on mains power (610 of 610 monitor samples; one sample lost to a file lock). Processor speed still varied within steps, so circuits are compared only within a step, by paired runs. pairReplication: 2026-10-26T21:45:05Z, mostly on battery after mains power was lost in its first step, cited only as a replication of the paired overhead. Excluded: 2026-10-26T08:59:41Z and 2026-10-26T09:59:31Z (laptop in use), 2026-10-26T11:54:09Z and 2026-10-26T11:55:30Z (15-40% load from an editor), pair-2026-10-26T12:12:04Z (inputs built inside the timed region), the test sessions smoke, smoke2, smoke3, diag-cold-2026-10-27 and prewarm-2026-10-27, and rows without a session field (runs before sessions were recorded).",
+ "sweep": "2026-10-27T03:06:54Z",
+ "pair": "2026-10-27T03:06:54Z",
+ "cold": "2026-10-27T03:06:54Z",
+ "tree": "2026-10-27T03:06:54Z",
+ "browser": "2026-10-27T03:06:54Z",
+ "browserPair": "2026-10-27T03:06:54Z",
+ "pairReplication": "2026-10-26T21:45:05Z"
+}

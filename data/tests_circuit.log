@@ -1,0 +1,73 @@
+PASS  T1 honest post verifies  (true)
+PASS  T2 B message 0 accepted  (proof)
+ERROR:  4 Error in template VCRLN_293 line: 106
+
+PASS  T2 B message 1 rejected (j >= limit)  (fails in VCRLN line 106)
+PASS  T3 A message 9 accepted (limit 10)  (proof)
+ERROR:  4 Error in template VCRLN_293 line: 106
+
+PASS  T3 A message 10 rejected  (fails in VCRLN line 106)
+ERROR:  4 Error in template VCRLN_293 line: 95
+
+PASS  T4 minor rejected in 18+ community  (fails in VCRLN line 95)
+PASS  T4 minor accepted in ungated community  (proof)
+PASS  T5 same index, same epoch: equal nullifiers  (equal)
+PASS  T5 secret recovered and matches the leaf's identity commitment  (match)
+PASS  T6 nullifiers differ across index, epoch, community  (all distinct)
+PASS  T7 changed x fails the proof  (false)
+PASS  T7 valid proof under a looser policy rejected  (public input baseLimit)
+PASS  T7 resent post dropped as replay, secret not revealed  (replay)
+PASS  T7 second post with a used index reveals the secret  (over limit)
+ERROR:  4 Error in template VCRLN_293 line: 80
+
+PASS  T8 claiming verifiedHuman=1 with an unverified leaf fails  (fails in VCRLN line 80)
+ERROR:  4 Error in template VCRLN_293 line: 80
+
+PASS  T9 revoked member cannot prove against the new root  (fails in VCRLN line 80)
+PASS  T9 fresh proof after revocation against the superseded root verifies (window bounds it)  (true)
+PASS  T10 pseudonym stable across epochs in one community  (equal)
+PASS  T10 pseudonym differs across communities; 0 in anonymous mode  (true, 0)
+PASS  T11 two clients reading the anchor (one revoked, one valid value; events in any order) find the same form and accept it  (same, true)
+PASS  T11 two valid values, only an expired one, a deactivated DID or an event without a block time stop the client; validTo = t is valid  (several anchored values; no anchored value; DID deactivated; bad event time; valid)
+PASS  T11 a per-member policy that is not anchored is refused  (not anchored)
+PASS  T11 an anchored form with an offset off the client's menu, or a limit coefficient above 255, is refused  (offset not on menu; limit field out of range)
+PASS  T11 a form read from one DID but naming another is refused  (form names another DID)
+PASS  T11 a credential with a schema other than the anchored one is refused  (issuer or schema not the anchored one)
+PASS  T11 a post under the anchored policy verifies  (true)
+PASS  T12 counter survives a restart; a retried post keeps its index  (0,1,2; retry 0)
+PASS  T12 two client instances on one state file never share an index  (0,1,2)
+PASS  T12 a client that finds the state locked by another client does not post  (counter is locked by another client)
+PASS  T12 two devices split the indices, never share one and stop at the limit; a bad device number or a changed device count stops the client  (10 distinct, stopped; bad device number; device count changed within the epoch)
+PASS  T12 a state created in this epoch (reinstall, new device) posts only from the epoch after next  (counter state is new or was lost recently: not posting in this epoch or the next; counter state is new or was lost recently: not posting in this epoch or the next; then 0)
+PASS  T12 a state deleted after enrollment, even twice and re-initialised, stops posting for this epoch and the next; fresh indices after  (counter state missing: not posting in this epoch or the next; counter state is new or was lost recently: not posting in this epoch or the next; 0)
+PASS  T12 a loss noticed with the clock one epoch behind still refuses the epoch whose index was used  (counter state missing: not posting in this epoch or the next; counter state is new or was lost recently: not posting in this epoch or the next)
+PASS  T12 truncated or malformed states (array slots, non-integer index, non-integer epoch, missing guard fields) count as lost  (5 refused)
+PASS  T12 after a post in a later epoch (clock set forward) an earlier epoch is refused, so a used slot is never pruned and reused  (0, 0; epoch earlier than one already used: not posting)
+PASS  T12 one community written in decimal or hex has one slot; a community outside the field or a non-integer epoch is refused  (0, 1; community is not a field element; bad epoch)
+PASS  T12 after a state is rolled back, the nullifier check skips indices already used  (without check 1; with check 2)
+PASS  T12 the client computes its own nullifier for an index exactly as the circuit does  (equal)
+PASS  T13 post for one community refused by another community's verifier  (public input community)
+ERROR:  4 Error in template Num2Bits_218 line: 38
+Error in template VCRLN_293 line: 87
+
+PASS  T14 message index 2^16 fails the range check  (fails in Num2Bits line 38)
+ERROR:  4 Error in template Num2Bits_218 line: 38
+Error in template VCRLN_293 line: 87
+
+PASS  T14 message index p-1 (a wrapped -1) fails the range check  (fails in Num2Bits line 38)
+ERROR:  4 Error in template Num2Bits_217 line: 38
+Error in template VCRLN_293 line: 83
+
+PASS  T14 birth date 2^20 in an issued leaf fails the range check  (fails in Num2Bits line 38)
+ERROR:  4 Error in template Num2Bits_217 line: 38
+Error in template VCRLN_293 line: 85
+
+PASS  T14 age cutoff p-1 fails the range check  (fails in Num2Bits line 38)
+PASS  T15 non-canonical nullifier (+p) rejected by verification  (false)
+PASS  T16 wrong signal count and incomplete policy are rejected  (rejected, malformed)
+PASS  T16 a forged share with an invalid proof does not block the genuine post  (proof; then ok)
+PASS  T17 a member born in 1950 posts in an ungated and in an 18+ community  (true)
+PASS  T18 a form anchored within the lead time before epoch e governs e + 1, not e; a view that has not reached the policy time is refused  (old form; new form; the chain view has not passed the policy time)
+PASS  T18 a post proved in epoch e under the later form is refused by e's verifier  (public input verifiedBonus)
+
+49/49 checks passed

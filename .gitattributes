@@ -1,0 +1,7 @@
+# LF everywhere, so data/SHA256SUMS and the shell scripts work on every platform
+* text=auto eol=lf
+*.zkey binary
+*.r1cs binary
+*.wasm binary
+*.pdf binary
+*.png binary

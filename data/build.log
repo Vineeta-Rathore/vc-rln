@@ -1,0 +1,10 @@
+{"name":"vcrln_d10","constraints":4116,"wires":4132,"privateInputs":26,"publicInputs":11,"outputs":3,"zkeyBytes":2875817,"wasmBytes":3289285}
+{"name":"vcrln_d16","constraints":5568,"wires":5590,"privateInputs":38,"publicInputs":11,"outputs":3,"zkeyBytes":3597401,"wasmBytes":3300377}
+{"name":"vcrln_d20","constraints":6536,"wires":6562,"privateInputs":46,"publicInputs":11,"outputs":3,"zkeyBytes":4078457,"wasmBytes":3376270}
+{"name":"vcrln_d24","constraints":7504,"wires":7534,"privateInputs":54,"publicInputs":11,"outputs":3,"zkeyBytes":4559513,"wasmBytes":3419914}
+{"name":"vcrln_d32","constraints":9440,"wires":9478,"privateInputs":70,"publicInputs":11,"outputs":3,"zkeyBytes":6045913,"wasmBytes":3428297}
+{"name":"rln2_d20","constraints":5820,"wires":5844,"privateInputs":43,"publicInputs":2,"outputs":3,"zkeyBytes":3405265,"wasmBytes":2421550}
+
+real	4m1.548s
+user	0m1.922s
+sys	0m2.606s
