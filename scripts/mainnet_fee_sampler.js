@@ -4,6 +4,7 @@
 // operator fee if the chain exposes it; Arbitrum One base fee and NodeInterface.gasEstimateL1Component(tx);
 // Ethereum base fee and suggested tip. No transaction is sent and no key is used.
 //   SAMPLES=72 INTERVAL=600 node scripts/mainnet_fee_sampler.js     (appends data/mainnet_fees.jsonl)
+// FEE_OUTPUT selects a separate JSONL file; RUN_ID labels a new collection without changing historical rows.
 const fs = require("fs");
 const path = require("path");
 const { ethers } = require("ethers");
@@ -18,7 +19,7 @@ const RPC = {
   opSepolia: ENV.OP_RPC || "https://sepolia.optimism.io",
 };
 const SAMPLES = Number(process.env.SAMPLES || 72), INTERVAL = Number(process.env.INTERVAL || 600);
-const OUT = path.join(L.ROOT, "data", "mainnet_fees.jsonl"), TXS = path.join(L.ROOT, "data", "tx_inputs.json");
+const OUT = process.env.FEE_OUTPUT || path.join(L.ROOT, "data", "mainnet_fees.jsonl"), TXS = path.join(L.ROOT, "data", "tx_inputs.json");
 const GPO = new ethers.Contract("0x420000000000000000000000000000000000000F", [
   "function getL1Fee(bytes) view returns (uint256)", "function getL1GasUsed(bytes) view returns (uint256)",
   "function getOperatorFee(uint256) view returns (uint256)"]);
@@ -52,7 +53,7 @@ async function loadTxs() {  // the calldata of one representative transaction pe
   const arb = new ethers.JsonRpcProvider(RPC.arb, 42161, { staticNetwork: true });
   const eth = new ethers.JsonRpcProvider(RPC.eth, 1, { staticNetwork: true });
   for (let s = 0; s < SAMPLES; s++) {
-    const rec = { sample: s, ts: new Date().toISOString(), op: {}, arb: {}, eth: {} };
+    const rec = { sample: s, ts: new Date().toISOString(), ...(process.env.RUN_ID ? { run: process.env.RUN_ID } : {}), op: {}, arb: {}, eth: {} };
     try {
       const b = await op.getBlock("latest");
       rec.op.block = b.number; rec.op.baseFeeWei = b.baseFeePerGas.toString();

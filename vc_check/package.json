@@ -5,7 +5,7 @@
   "description": "Checks the end-to-end credential with third-party libraries (Digital Bazaar vc and eddsa-jcs-2022, jsonld)",
   "license": "MIT",
   "type": "module",
-  "scripts": { "check": "node independent_vc_check.mjs credential.json" },
+  "scripts": { "check": "node independent_vc_check.mjs credential.json", "test": "node --test test_outcomes.mjs" },
   "dependencies": {
     "@digitalbazaar/data-integrity": "2.5.0",
     "@digitalbazaar/eddsa-jcs-2022-cryptosuite": "1.0.0",

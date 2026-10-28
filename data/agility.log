@@ -5,7 +5,7 @@
    "revocations": 128000.0,
    "leafOps": 276000.0,
    "gas": 334645000,
-   "ETH_at_sampled_base_fee": 0.018342838491415,
+   "ETH_at_sampled_base_fee": 0.0186885061957475,
    "ETH_at_10_gwei": 3.34645
   },
   "rlnV2Tier": {
@@ -13,7 +13,7 @@
    "revocations": 7000,
    "leafOps": 19000,
    "gas": 24018672,
-   "ETH_at_sampled_base_fee": 0.0013165313062541404,
+   "ETH_at_sampled_base_fee": 0.0013413411171526953,
    "ETH_at_10_gwei": 0.24018671875
   },
   "ours": {
@@ -21,7 +21,7 @@
    "revocations": 2000,
    "leafOps": 9000,
    "gas": 12090156,
-   "ETH_at_sampled_base_fee": 0.0006626956429342187,
+   "ETH_at_sampled_base_fee": 0.0006751840307958594,
    "ETH_at_10_gwei": 0.1209015625
   },
   "ratio": {

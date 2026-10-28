@@ -1,0 +1,82 @@
+Notices for cached W3C JSON-LD contexts
+=====================================
+
+These files are redistributed unchanged in vc_check/vc_contexts/. Their SHA-256
+hashes match the bytes served by the listed public source URLs on 28 October 2026.
+The copyright years below follow the associated published Recommendations,
+not the date these copies were downloaded. The JSON files contain no embedded
+copyright notice; the required short notices are supplied here, adjacent to
+the full W3C Software and Document License in W3C-2023.txt.
+
+License: https://www.w3.org/copyright/software-license-2023/
+Short-notice source: https://www.w3.org/Consortium/Legal/2023/copyright-software-short-notice.html
+
+Repository-wide license sources:
+https://github.com/w3c/vc-data-model/blob/main/LICENSE.md
+https://github.com/w3c/did-core/blob/main/LICENSE.md
+https://github.com/w3c/vc-data-integrity/blob/main/LICENSE.md
+
+
+cred-v2.json
+------------
+Source: https://www.w3.org/ns/credentials/v2
+Resolved URL: https://www.w3.org/ns/credentials/v2
+Associated Recommendation: https://www.w3.org/TR/2025/REC-vc-data-model-2.0-20250515/
+SHA-256: 59955ced6697d61e03f2b2556febe5308ab16842846f5b586d7f1f7adec92734
+Modification: none.
+
+cred-v2.json: https://www.w3.org/ns/credentials/v2
+Copyright © 2025 World Wide Web Consortium. All Rights Reserved. This work is distributed under the W3C® Software and Document License [1] in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+[1] https://www.w3.org/copyright/software-license-2023/
+
+
+undef-v2.json
+-------------
+Source: https://www.w3.org/ns/credentials/undefined-terms/v2
+Resolved URL: https://www.w3.org/ns/credentials/undefined-terms/v2
+Associated Recommendation: https://www.w3.org/TR/2025/REC-vc-data-model-2.0-20250515/
+SHA-256: 82dab514ba44eb18f5d1b0f638c5e140c6a556fbfb5089601bdc0fa5eb8b2581
+Modification: none.
+
+undef-v2.json: https://www.w3.org/ns/credentials/undefined-terms/v2
+Copyright © 2025 World Wide Web Consortium. All Rights Reserved. This work is distributed under the W3C® Software and Document License [1] in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+[1] https://www.w3.org/copyright/software-license-2023/
+
+
+did-v1.json
+-----------
+Source: https://www.w3.org/ns/did/v1
+Resolved URL: https://www.w3.org/ns/did/v1
+Associated Recommendation: https://www.w3.org/TR/2022/REC-did-core-20220719/
+SHA-256: 4f3eae5568c9c5f036a082088f9e192019ee06faa78973c87ff91d5421b88dad
+Modification: none.
+
+did-v1.json: https://www.w3.org/ns/did/v1
+Copyright © 2022 W3C (World Wide Web Consortium) (MIT, ERCIM, Keio, Beihang). All Rights Reserved. This work is distributed under the W3C® Software and Document License [1] in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+[1] https://www.w3.org/copyright/software-license-2023/
+
+
+multikey-v1.json
+----------------
+Source: https://w3id.org/security/multikey/v1
+Resolved URL: https://www.w3.org/2025/credentials/vcdi/multikey/context/v1.jsonld
+Associated Recommendation: https://www.w3.org/TR/2025/REC-vc-data-integrity-20250515/
+SHA-256: ba2c182de2d92f7e47184bcca8fcf0beaee6d3986c527bf664c195bbc7c58597
+Modification: none.
+
+multikey-v1.json: https://w3id.org/security/multikey/v1
+Copyright © 2025 World Wide Web Consortium. All Rights Reserved. This work is distributed under the W3C® Software and Document License [1] in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+[1] https://www.w3.org/copyright/software-license-2023/
+
+
+di-v2.json
+----------
+Source: https://w3id.org/security/data-integrity/v2
+Resolved URL: https://www.w3.org/2025/credentials/vcdi/context/v2.jsonld
+Associated Recommendation: https://www.w3.org/TR/2025/REC-vc-data-integrity-20250515/
+SHA-256: 67f21e6e33a6c14e5ccfd2fc7865f7474fb71a04af7e94136cb399dfac8ae8f4
+Modification: none.
+
+di-v2.json: https://w3id.org/security/data-integrity/v2
+Copyright © 2025 World Wide Web Consortium. All Rights Reserved. This work is distributed under the W3C® Software and Document License [1] in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+[1] https://www.w3.org/copyright/software-license-2023/

@@ -8,7 +8,9 @@ from datetime import datetime
 from pathlib import Path
 
 DATA = Path(__file__).resolve().parents[1] / "data"
-FEE_FROM, FEE_TO = "2026-10-25T22:00:00Z", "2026-10-26T13:30:00Z"  # 25 Oct 22:10Z to 26 Oct 13:22Z, about 15 h
+# Include both saved sampling runs. The last seven scheduled readings failed DNS resolution;
+# retain the fixed end time rather than trimming it to the last successful observation.
+FEE_FROM, FEE_TO = "2026-10-25T22:00:00Z", "2026-10-27T22:00:00Z"
 
 
 def _t(s):

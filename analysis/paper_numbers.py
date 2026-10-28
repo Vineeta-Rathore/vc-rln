@@ -370,6 +370,11 @@ N["revocationLag"] = lag
 
 # ---- mainnet fees (median and interquartile range over the frozen sample window) -------------------------
 import fees as feemod
+# Arbitrum receipt gas can include an L1-data component. The cited testnet runs
+# have zero data gas; fail closed on a future run until that component is removed
+# before adding the independently estimated mainnet data fee.
+assert all(r.get("gasUsedForL1") is not None and int(r["gasUsedForL1"]) == 0 for r in live.get("arbSepolia", [])), \
+    "Arbitrum extrapolation needs execution-only gas when saved L1 data gas is nonzero"
 mf = feemod.samples()
 N["mainnet.sampling"] = feemod.window(mf)
 txin = json.loads((DATA / "tx_inputs.json").read_text(encoding="utf-8")) if (DATA / "tx_inputs.json").exists() else []

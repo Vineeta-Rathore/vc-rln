@@ -1,7 +1,7 @@
 # vc-rln: rate limits derived from verifiable credentials
 
 Code, data and analysis for the paper *"Anonymous Social Media Posting with Rate Limits Derived from Verifiable
-Credentials"*, V. Rathore and M. K. Rawat, submitted to the 3rd International Conference on Computer, Communication
+Credentials"*, V. Rathore and M. K. Rawat, prepared for submission to the 3rd International Conference on Computer, Communication
 and Control (IC4'27), Medicaps University, Indore, India.
 
 A member posts anonymously in a community and proves in zero knowledge that a leaf of the issuer's Merkle tree
@@ -109,6 +109,10 @@ writes `vc_check/result.json`. Registry status is checked by our client (`script
   idle machine on mains power, runs every timed step and logs power and processor speed. Chrome runs use
   puppeteer-core from `npm ci` and Chrome at its default path unless `CHROME` is set. Absolute times hold for the
   machine and session; the paper compares circuits by paired runs.
+- Fee resampling is read-only. `SAMPLES=145 INTERVAL=600 RUN_ID=<label> FEE_OUTPUT=<path>` selects at least a
+  24-hour run in a separate JSONL file. Check successful hour coverage and gaps before adding it to the fixed
+  analysis window; a planned 24-hour run does not guarantee 24 successful hours. It uses no funding key.
+  `ENV_FILE=<nonexistent-path>` avoids loading a private `.env` when public RPC overrides are supplied.
 - Testnet runs send transactions and append to the cited data files (the analysis then uses the newest complete run),
   so run them in a separate copy. Copy `.env.example` to `.env`, set a testnet-only key and RPC URLs, run
   `npx hardhat compile`, then `NET=opSepolia node scripts/testnet.js` and `NET=opSepolia node scripts/revoke_lag.js`,
@@ -121,6 +125,11 @@ writes `vc_check/result.json`. Registry status is checked by our client (`script
   power) and the sessions left out, with the reason for each. An earlier session that ran mostly on battery is
   reported in the paper as a replication of the paired overhead.
 - Mainnet fees come from oracle readings, not from transactions; `analysis/fees.py` fixes the window the paper uses.
+  Both saved sampling runs are included: 192 successful, matched readings over 46.4 hours, representing 23 of the
+  24 UTC hours of the day. The longest gap is 10.3 hours. The final scheduled readings failed DNS resolution;
+  the data do not cover a continuous 24-hour period or every hour of the day.
+  Mainnet Arbitrum extrapolation asserts that the cited testnet receipts have zero L1 data gas, so a future run
+  cannot silently count the same data component twice.
 - `scripts/gas_local.js` draws random leaves and proofs, so a rerun can differ from `data/gas_local.jsonl` by
   12 gas per zero calldata byte (tens of gas per transaction).
 - `contracts/PostBoard.sol` refuses `x = 0`: the share would then equal the secret, and `shareX` would record the
@@ -141,7 +150,7 @@ writes `vc_check/result.json`. Registry status is checked by our client (`script
 ## Provenance and versions
 
 - Gas runs: 25 October 2026, 21:54-22:18 UTC (26 October IST). Revocation runs: 26 October 2026, 08:28-09:26 UTC.
-  Mainnet fee readings: 25 October 22:10 UTC to 26 October 13:22 UTC. CPU measurements, end-to-end run and
+  Successful mainnet fee readings: 25 October 22:10 UTC to 27 October 20:36 UTC. CPU measurements, end-to-end run and
   independent credential check: 27 October 2026. Each JSONL row carries its session, run or timestamp, except the
   Hardhat gas files (`gas_local.jsonl`, `superseded/gas_local_v1_maproot.jsonl`).
 - Toolchain: circom 2.2.3, circomlib 2.0.5, snarkjs 0.7.5, Node.js 22.10.0, Hardhat 2.28.6 (Osaka hardfork for gas,

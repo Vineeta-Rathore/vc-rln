@@ -3,7 +3,8 @@
 //     undefined-terms context is expanded too, to show that VC 2.0 needs that context here;
 //  2. @digitalbazaar/vc verifyCredential with the eddsa-jcs-2022 cryptosuite, the issuer key taken from the issuer's
 //     did:ethr document resolved on OP Sepolia. Registry status is checked by our client (scripts/vc_demo.js).
-//   cd vc_check && npm install && npm run check        (versions pinned in vc_check/package.json; writes result.json)
+//   cd vc_check && npm ci && npm run check        (versions pinned in vc_check/package.json; writes result.json)
+//   node independent_vc_check.mjs credential.json [output.json]  (exit 1 if a required outcome fails)
 //   OP_RPC overrides the OP Sepolia endpoint; ERC1056 overrides the registry read from ../data/registries.json.
 import fs from "node:fs";
 import { createRequire } from "node:module";
@@ -11,6 +12,7 @@ import jsonld from "jsonld";
 import * as vc from "@digitalbazaar/vc";
 import { DataIntegrityProof } from "@digitalbazaar/data-integrity";
 import { createVerifyCryptosuite } from "@digitalbazaar/eddsa-jcs-2022-cryptosuite";
+import { failedChecks } from "./verification_outcomes.mjs";
 
 const req = createRequire(import.meta.url);
 const { Resolver } = req("did-resolver");
@@ -43,7 +45,9 @@ const RPC = process.env.OP_RPC || "https://sepolia.optimism.io";
 const regFile = new URL("../data/registries.json", import.meta.url);
 const reg = process.env.ERC1056 || JSON.parse(fs.readFileSync(regFile, "utf8")).find((r) => r.network === "opSepolia").erc1056;
 const resolver = new Resolver(getResolver({ networks: [{ name: "opsepolia", chainId: 11155420, rpcUrl: RPC, registry: reg }] }));
-const didDoc = (await resolver.resolve(cred.issuer)).didDocument;
+const didResult = await resolver.resolve(cred.issuer);
+const didDoc = didResult.didDocument;
+if (!didDoc) throw new Error("Issuer DID resolution failed: " + (didResult.didResolutionMetadata?.error || "no document returned"));
 const vm = didDoc.verificationMethod.find((m) => m.id === proof.verificationMethod);
 if (!vm) throw new Error("verification method not in the issuer's DID document");
 docs[vm.id] = { "@context": "https://w3id.org/security/multikey/v1", id: vm.id, type: "Multikey", controller: cred.issuer, publicKeyMultibase: vm.publicKeyMultibase };
@@ -65,5 +69,12 @@ out.versions = Object.fromEntries(["jsonld", "@digitalbazaar/vc", "@digitalbazaa
 out.credential = process.argv[2];
 out.date = new Date().toISOString();
 out.script = "vc_check/independent_vc_check.mjs";
-fs.writeFileSync(new URL("result.json", import.meta.url), JSON.stringify(out, null, 1) + "\n");
+out.registryStatus = "checked separately by the application; not verified by this checker";
+out.failedChecks = failedChecks(out);
+out.requiredChecksPassed = out.failedChecks.length === 0;
+fs.writeFileSync(process.argv[3] || new URL("result.json", import.meta.url), JSON.stringify(out, null, 1) + "\n");
 console.log(JSON.stringify(out, null, 1));
+if (!out.requiredChecksPassed) {
+  console.error("Credential check failed: " + out.failedChecks.join(", "));
+  process.exitCode = 1;
+}

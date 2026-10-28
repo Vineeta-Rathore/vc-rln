@@ -1,6 +1,6 @@
 "operation (fee in 1e-9 ETH, median)",Ethereum base,Ethereum +tip,OP base,OP +tip,Arbitrum
-PostBoard.post(1),1.875e+04,1.875e+04,3.977,346,6868
-addLeaves(1),2922,2922,1.162,54.49,1076
-addLeaves(16),3557,3557,4.447,69.32,1319
-addLeaves(128),1.027e+04,1.027e+04,28.98,216.3,3137
-revokeLeaves(1),2874,2875,1.016,53.46,1058
+PostBoard.post(1),1.91e+04,1.91e+04,4.072,346.1,6871
+addLeaves(1),2977,2977,1.184,54.51,1076
+addLeaves(16),3624,3624,4.518,69.39,1320
+addLeaves(128),1.046e+04,1.046e+04,29.73,217.1,3140
+revokeLeaves(1),2929,2929,1.037,53.48,1058

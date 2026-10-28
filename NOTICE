@@ -2,7 +2,7 @@ Licenses of the contents of this repository
 ===========================================
 
 Our code (circuits/vcrln.circom, contracts/IssuerRootRegistry*.sol, contracts/PostBoard.sol, scripts/, analysis/,
-tools/, vc_check/independent_vc_check.mjs): MIT, see LICENSE.
+tools/, vc_check/*.mjs): MIT, see LICENSE.
 
 Measurement data (data/), the sample proofs (proofs/) and the end-to-end credential (vc_check/credential.json,
 vc_check/result.json): CC BY 4.0, see data/LICENSE.
@@ -41,4 +41,6 @@ vc_check/vc_contexts/*.json
   (https://www.w3.org/ns/credentials/v2, https://www.w3.org/ns/credentials/undefined-terms/v2,
   https://www.w3.org/ns/did/v1, https://w3id.org/security/multikey/v1, https://w3id.org/security/data-integrity/v2),
   cached so that the check runs offline apart from DID resolution; W3C Software and Document License
-  (https://www.w3.org/copyright/software-license-2023/).
+  (LICENSES/W3C-2023.txt; https://www.w3.org/copyright/software-license-2023/).
+  The per-context source URLs, copyright notices and unchanged-file hashes are recorded in
+  LICENSES/W3C-CONTEXTS-NOTICE.txt.
