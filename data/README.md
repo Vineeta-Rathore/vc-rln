@@ -31,8 +31,16 @@ the reason for each exclusion.
 | `testnet.jsonl` | `scripts/testnet.js` | every transaction of the testnet runs: network, operation, hash, block, gas, timing |
 | `revocation_lag.jsonl` | `scripts/revoke_lag.js` | 20 timed revocations per network: send, receipt and visibility to a second provider |
 | `mainnet_fees.jsonl` | `scripts/mainnet_fee_sampler.js` | read-only OP Mainnet, Arbitrum One and Ethereum fee readings; `analysis/fees.py` fixes the window used |
+| `mainnet_fees_run3_manifest.json` | integration of the completed third collection | segment labels, counts, timestamps and hashes; instructions to reconstruct each original segment from the unchanged raw lines |
 | `tx_inputs.json` | `scripts/mainnet_fee_sampler.js` | calldata of one OP Sepolia transaction per operation, fetched once from the chain; the sampler prices it and the EIP-7623 floor check reads it. The three `addLeaves` entries come from an earlier OP Sepolia run of `testnet.js` (25 October 21:55 UTC); calldata size depends only on the leaf count |
 | `transactions.csv`, `registries.json` | `analysis/export_transactions.py` | every cited transaction and the registries whose event logs `tools/` replays |
+
+The completed fee snapshot has 348 raw rows. The fixed window from 25 October 22:00 UTC to 29 October 04:00 UTC
+selects 337 successful matched readings after excluding ten rows with chain-read errors and one near-duplicate.
+Successful readings span 77.4 hours and represent all 24 UTC hours of the day, with a 10.3-hour maximum gap.
+The new third collection contains 145 complete readings; its interruption gaps remain visible in the timestamps.
+The manifest's original segment files are reconstructible by filtering the raw JSONL lines by run label, preserving
+their order and newline bytes. They are not separately required downloads.
 
 ## Design checks and the end-to-end run (Sections IV, V-D, VI)
 

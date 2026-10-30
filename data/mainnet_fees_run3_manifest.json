@@ -1,0 +1,45 @@
+{
+  "description": "Completed third fee collection, including two interrupted segments and the completed manual continuation.",
+  "integration_date_utc": "2026-10-30",
+  "planned_observations": 145,
+  "completed_observations": 145,
+  "source_segments": [
+    {
+      "original_segment_name": "observations.jsonl",
+      "run": "2026-10-28-run3",
+      "rows": 30,
+      "first_utc": "2026-10-28T00:56:15.470Z",
+      "last_utc": "2026-10-28T05:56:04.740Z",
+      "sha256": "5b62edef7809e27f13da180dc67ed3bc36b703aed15e96feee04b04f31127f81"
+    },
+    {
+      "original_segment_name": "observations_manual_20261028T081640Z.jsonl",
+      "run": "2026-10-28-run3-manual-20261028T081640Z",
+      "rows": 114,
+      "first_utc": "2026-10-28T08:16:41.967Z",
+      "last_utc": "2026-10-29T03:34:17.077Z",
+      "sha256": "436663800d1dcd85800585781d5a4068e46b86792d9231cd0175ad26833e22de"
+    },
+    {
+      "original_segment_name": "observations_resume1.jsonl",
+      "run": "2026-10-28-run3-resume1",
+      "rows": 1,
+      "first_utc": "2026-10-28T06:47:06.977Z",
+      "last_utc": "2026-10-28T06:47:06.977Z",
+      "sha256": "0401bb9dd8477306368cb2f49cc49850c454877d7f5a5ea364041c71948faaa6"
+    }
+  ],
+  "source_reconstruction": "Filter mainnet_fees.jsonl raw lines by each run label, preserving their order and newline bytes; the concatenated lines reproduce the recorded segment SHA-256.",
+  "previous_raw_rows": 203,
+  "combined_raw_rows": 348,
+  "previous_raw_sha256": "005380e4bec92e89d8c7ea2e5d83ca51c1d6081cdfa24d2c43f7dc2569e12a1f",
+  "appended_raw_sha256": "02953b0ae4403b29c1d6f5e34165c21c6418211494834fa8972c13e26689a406",
+  "combined_raw_sha256": "863a197aee79d2e8f70ebeb70b86b394b2e3078e5dbdeb0d98e610b46613af79",
+  "previous_raw_prefix_preserved": true,
+  "selection_window": {
+    "from": "2026-10-25T22:00:00Z",
+    "to": "2026-10-29T04:00:00Z"
+  },
+  "selection_rationale": "Include all saved completed collection segments, retain failed historical rows, and apply the unchanged matched-chain/spacing filter. The cutoff was rounded up to include the completed collection, without selecting readings by price.",
+  "coverage_note": "The third collection spans 26.6 hours but lacks UTC hour 07 and includes interruption gaps; time-of-day coverage must be evaluated on the full selected dataset."
+}

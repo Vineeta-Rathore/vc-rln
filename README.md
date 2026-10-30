@@ -125,9 +125,11 @@ writes `vc_check/result.json`. Registry status is checked by our client (`script
   power) and the sessions left out, with the reason for each. An earlier session that ran mostly on battery is
   reported in the paper as a replication of the paired overhead.
 - Mainnet fees come from oracle readings, not from transactions; `analysis/fees.py` fixes the window the paper uses.
-  Both saved sampling runs are included: 192 successful, matched readings over 46.4 hours, representing 23 of the
-  24 UTC hours of the day. The longest gap is 10.3 hours. The final scheduled readings failed DNS resolution;
-  the data do not cover a continuous 24-hour period or every hour of the day.
+  The completed collections provide 337 successful, matched readings over 77.4 hours, representing all 24 UTC
+  hours of the day. The longest gap is 10.3 hours; representation of every hour does not imply continuous or
+  uniform sampling. Earlier failed readings remain in the raw data. The third collection completed all 145
+  readings across two interrupted segments and a manual continuation. `data/mainnet_fees_run3_manifest.json`
+  records its segment labels, counts and hashes; filtering the raw lines by run label reconstructs each segment.
   Mainnet Arbitrum extrapolation asserts that the cited testnet receipts have zero L1 data gas, so a future run
   cannot silently count the same data component twice.
 - `scripts/gas_local.js` draws random leaves and proofs, so a rerun can differ from `data/gas_local.jsonl` by
@@ -150,7 +152,7 @@ writes `vc_check/result.json`. Registry status is checked by our client (`script
 ## Provenance and versions
 
 - Gas runs: 25 October 2026, 21:54-22:18 UTC (26 October IST). Revocation runs: 26 October 2026, 08:28-09:26 UTC.
-  Successful mainnet fee readings: 25 October 22:10 UTC to 27 October 20:36 UTC. CPU measurements, end-to-end run and
+  Successful mainnet fee readings: 25 October 22:10 UTC to 29 October 03:34 UTC. CPU measurements, end-to-end run and
   independent credential check: 27 October 2026. Each JSONL row carries its session, run or timestamp, except the
   Hardhat gas files (`gas_local.jsonl`, `superseded/gas_local_v1_maproot.jsonl`).
 - Toolchain: circom 2.2.3, circomlib 2.0.5, snarkjs 0.7.5, Node.js 22.10.0, Hardhat 2.28.6 (Osaka hardfork for gas,

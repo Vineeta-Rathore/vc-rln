@@ -8,9 +8,10 @@ from datetime import datetime
 from pathlib import Path
 
 DATA = Path(__file__).resolve().parents[1] / "data"
-# Include both saved sampling runs. The last seven scheduled readings failed DNS resolution;
-# retain the fixed end time rather than trimming it to the last successful observation.
-FEE_FROM, FEE_TO = "2026-10-25T22:00:00Z", "2026-10-27T22:00:00Z"
+# Include all completed collections, including the resumed third run. Historical failed
+# readings remain in the raw file; run-3 provenance records its interruptions and completion.
+# The fixed cutoff includes the last reading at 29 Oct 03:34Z without selecting by price.
+FEE_FROM, FEE_TO = "2026-10-25T22:00:00Z", "2026-10-29T04:00:00Z"
 
 
 def _t(s):

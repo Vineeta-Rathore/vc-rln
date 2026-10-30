@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased (2026-10-30): completed fee collection
+
+- Include all 145 readings from the completed third collection, preserving its two interrupted segments and
+  manual continuation. Keep the previous 203 raw rows unchanged.
+- Extend the fixed analysis cutoff to 29 October 04:00 UTC. The unchanged filter selects 337 successful matched
+  readings over 77.4 hours and represents all 24 UTC hours of the day, with a 10.3-hour maximum gap.
+- Record source-segment hashes and reconstruction instructions in `data/mainnet_fees_run3_manifest.json`.
+  Recompute the fee estimates and policy-model costs from the completed evidence.
+
 ## Unreleased (2026-10-28): submission-candidate corrections
 
 - Include both saved fee-sampling runs under one fixed window: 192 successful matched readings over 46.4 hours,
