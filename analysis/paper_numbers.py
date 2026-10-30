@@ -1,4 +1,5 @@
-"""Every number the IC4 paper cites, computed from the raw data files, plus a few related figures it does not cite
+"""Experimental results and model calculations used by the IC4 paper, derived from observations and retained summaries,
+plus a few related quantities it does not cite
 (e.g. unpaired overheads from the depth sweep and from separate Chrome pages). Prints a report and writes
 data/paper_numbers.json; tables for the manuscript are written to data/tables/*.csv. The benchmark sessions it cites
 are named in analysis/sessions.json; without that file it takes the latest complete session of each benchmark.
@@ -393,7 +394,7 @@ for r in mf:
     for x in r["op"]["tx"]:
         k = (x["op"], x["n"])
         ge = gas_main[k]["gasUsedOp"]
-        l1 = int(x["l1FeeWei"]) + int(x["operatorFeeWei"] or 0)
+        l1 = int(x["l1FeeWei"]) + int(x["operatorFeeWei"])
         fees[k]["op_base"].append(ge * ob + l1)
         fees[k]["op_tip"].append(ge * (ob + ot) + l1)
         fees[k]["op_l1share_base"].append(l1 / (ge * ob + l1))

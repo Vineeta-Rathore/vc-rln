@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # The analysis in the order its outputs depend on each other: optionally the tests (RUN_TESTS=1), the policy model
-# (reads the frozen fee window), every number the paper cites (embeds agility.json and checks it used the same fee
+# (reads the frozen fee window), experimental results and model calculations (embeds agility.json and checks the fee
 # samples), the on-chain trail for the checking tools, and the figures (read the cited benchmark session from
 # paper_numbers.json). EXPORT_PROOFS=1 also writes new sample proofs (fresh randomness, so new files).
 #   bash analysis/run_all.sh

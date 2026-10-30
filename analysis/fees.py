@@ -1,7 +1,8 @@
 """Mainnet fee samples used by the paper: one fixed window, the same filter everywhere.
 The sampler (scripts/mainnet_fee_sampler.js) appends to data/mainnet_fees.jsonl; samples outside the window, or with
 a read error on any of the three chains, are left out, and so is the second of two samples taken within the same
-5 minutes (the sampler was started twice at 22:10Z). Re-running the analysis later gives the same numbers.
+5 minutes (the sampler was started twice at 22:10Z). A selected reading with an unknown OP operator fee stops
+the analysis rather than treating an unavailable component as zero. Re-running uses the same fixed snapshot.
 """
 import json
 from datetime import datetime
@@ -28,6 +29,9 @@ def samples():
             continue
         last = _t(r["ts"])
         if not (r["op"].get("error") or r["arb"].get("error") or r["eth"].get("error")):
+            transactions = r["op"].get("tx", [])
+            if not transactions or any(t.get("operatorFeeWei") is None for t in transactions):
+                raise ValueError(f"Unknown OP operator fee at {r['ts']}; unavailable fee components cannot be counted as zero")
             out.append(r)
     return out
 

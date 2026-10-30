@@ -1,6 +1,6 @@
 # Data
 
-Raw measurements and derived files behind every table, figure and number of the paper. JSONL files hold one JSON
+Observations, retained summaries and derived files behind the paper's experimental results and model calculations. JSONL files hold one JSON
 object per line; each line carries its session, run or timestamp, except the Hardhat gas files (`gas_local.jsonl`,
 `superseded/gas_local_v1_maproot.jsonl`). `SHA256SUMS` lists the checksum of every data file.
 Sessions that the paper does not cite stay in the files; `analysis/sessions.json` selects the cited ones and gives
@@ -22,6 +22,11 @@ the reason for each exclusion.
 | `constraint_breakdown.json` | `scripts/constraint_breakdown.js` | constraints of the pseudonym, the in-circuit external nullifier, the policy and a platform-wide cap |
 | `cpu_suite.log`, `bench.log`, `bench_pair.log`, `bench_cold.log`, `bench_tree.log`, `bench_browser.log` | `scripts/run_cpu_suite.sh` | progress logs of the CPU sessions |
 | other `*.log` files | the script named in the file name, output redirected by hand | progress and errors; `wait_ac.log` and `cpu_suite_run*.log` log the wait for mains power and the suite run |
+
+Most proving-time series retain one observation per timed proof. Verification timings in `bench.jsonl` and tree
+costs in `bench_tree.jsonl` retain counts and summary statistics; not every individual verification or tree-operation
+duration is preserved. Their summaries can be checked against the reported results, but the individual durations
+cannot all be reconstructed from this bundle.
 
 ## Gas, fees and revocation (Table III, Section V-B)
 
@@ -54,7 +59,7 @@ their order and newline bytes. They are not separately required downloads.
 
 ## Derived files
 
-`paper_numbers.json` and `.log` (every number the paper cites), `agility.json` and `.log` (Section V-C) and
+`paper_numbers.json` and `.log` (experimental results and model quantities), `agility.json` and `.log` (Section V-C) and
 `tables/` are written by `analysis/run_all.sh`. `superseded/` keeps the runs of an earlier registry version that
 the paper does not use.
 

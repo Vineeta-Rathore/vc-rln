@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased (2026-10-30): final research review
+
+- Reject a selected fee observation with an unavailable OP operator-fee component instead of counting it as zero.
+  The 337 cited observations contain explicit components, so their selection and numerical results are unchanged.
+- Reject empty network selections and invalid log steps before initializing the tree-checking tool. Add offline
+  regressions for these inputs and for missing/null operator-fee components.
+- Qualify data-availability claims, document the verification/tree summary exceptions and platform-dependent
+  rendering, and correct the policy-cutoff comment. Record the author-approved paper acknowledgment and artifact
+  AI assistance.
+- The accompanying paper clarifies update ratios, model boundaries, boxplot encoding and observational privacy
+  conditions; it removes an unsupported static-analysis assurance. No measurements or reference entries change.
+
 ## Unreleased (2026-10-30): completed fee collection
 
 - Include all 145 readings from the completed third collection, preserving its two interrupted segments and

@@ -180,7 +180,7 @@ function anchoredValue(events, name, at) {
 }
 // The policy of epoch e is the value anchored POLICY_LEAD_S before e starts, read from a view of the chain that has
 // passed that time (a safe or finalized block of the reader's own node), so client and verifier use one form for the
-// whole epoch, a change takes effect from the next epoch, and an anchor mined close to the boundary cannot be read
+// whole epoch. A change affects the first epoch whose cutoff includes it; an anchor close to the boundary cannot be read
 // differently by readers whose views lag.
 const POLICY_LEAD_S = 600;
 const epochStart = (epoch) => needInt(epoch, "epoch") * EPOCH_HOURS * 3600;

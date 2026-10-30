@@ -1,19 +1,26 @@
 // Replays each registry's LeavesAdded and LeavesRevoked events, rebuilds the issuer's depth-20 Poseidon tree and
 // compares every root it reaches with the root in the event and the final one with currentRoot(issuer). Read-only.
-// Old logs need an endpoint that serves them; the defaults in common.js do, but some free endpoints return an empty
+// Old logs need an endpoint that serves them; some free endpoints return an empty
 // list or "pruned history" for old blocks.
 //   node tools/rebuild_tree.js [network]
 const fs = require("fs");
 const path = require("path");
+const allRegs = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data", "registries.json"), "utf8"));
+const regs = allRegs.filter((r) => !process.argv[2] || r.network === process.argv[2]);
+if (!regs.length) {
+  console.error(`No registry selected. Available networks: ${allRegs.map((r) => r.network).join(", ") || "none"}`);
+  process.exit(1);
+}
+const STEP = Number(process.env.LOG_STEP || 2000);
+if (!Number.isSafeInteger(STEP) || STEP <= 0) {
+  console.error("LOG_STEP must be a positive safe integer");
+  process.exit(1);
+}
 const { Contract } = require("ethers");
 const { hasher, Tree, provider, retry } = require("./common");
-
 const ABI = ["event LeavesAdded(address indexed issuer, uint256 firstIndex, uint256[] leaves, uint256 root)",
   "event LeavesRevoked(address indexed issuer, uint256[] indices, uint256 root)",
   "function currentRoot(address issuer) view returns (uint256)"];
-const regs = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data", "registries.json"), "utf8"))
-  .filter((r) => !process.argv[2] || r.network === process.argv[2]);
-const STEP = Number(process.env.LOG_STEP || 2000);
 
 (async () => {
   const H = await hasher();
