@@ -197,8 +197,6 @@ Please cite the paper and, when you use the code or data, this repository (metad
 
 ## AI assistance
 
-The paper contains the following author-approved acknowledgment:
-
 > The authors used Claude (Anthropic) for language refinement of the manuscript. The authors take full responsibility for the content of this paper.
 
 For this artifact, Claude (Anthropic) and Codex (OpenAI) also assisted with implementation, analysis, verification
